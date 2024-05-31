@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} DELETE - API REST {% endblock %}
+
+{% block body %}
+
+<div class="container py-4" style="display: flex; flex-direction: column; justify-content: first baseline; height: 100vh;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">DELETE - API REST</h2>
+            <div class="row">
+                <div class="col-mb-4 mb-3"></div>
+                <div class="input-group">
+                    <form action="/delete_vh/" method="POST"> {% csrf_token %}
+                    <input type="number" placeholder="ID" id="dlID" name="id"
+                        class="form control border-primary rounded-0 " style="margin-right: 10px; background-color:#f8f9fa;">
+                    <button type="submit"class="btn btn-danger btn-block rounded" style="margin-right: 10px;">Eliminar</button>
+                    </form>
+                    <a class="btn btn-success btn-block rounded" href="/index/">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

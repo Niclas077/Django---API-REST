@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} GET VIEW {% endblock %}
+{% block body %}
+    <div class="container py-4" style="display: flex; flex-direction: column; justify-content: center; height: 100vh;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">GET - REST API</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="input-group">
+                            <input type="number" placeholder="ID" id="txtid" name="id" class="form-control rounded-0 border-primary" style="margin-right: 10px; background-color: #f8f9fa;">
+                            <button class="btn btn-success btn-block rounded" style="margin-right: 3px;" id="btnBuscar">Buscar</button>
+                            <a class="btn btn-primary btn-block rounded" href="/formulario/" >Añadir</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                       <table class="table table-responsive table-striped ">
+                        <thead class="table table-dark">
+                            <tr>
+                                <th class="tect-center">ID</th>
+                                <th class="text-center" >Marca</th >
+                                <th class="text-center">Año</th >
+                                <th class="text-center">Color</th >
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for vh in Vehiculos %}
+                            <tr>
+                                <td class="text-center">{{vh.id}}</td>
+                                <td class="text-center">{{vh.marca}}</td>
+                                <td class="text-center">{{vh.anyo}}</td>
+                                <td class="text-center">{{vh.color}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                       </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <a class="btn btn-warning" href="/index/">Regresar</a>
+        </div>
+    </div>
+{% endblock %}

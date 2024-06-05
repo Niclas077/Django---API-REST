@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+   
   btnBuscar.addEventListener("click", () => {
     const id = document.getElementById("txtid").value;
     if (id) {
